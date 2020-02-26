@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: radius-acct
+  labels:
+    app.kubernetes.io/name: ocs
+spec:
+  selector:
+    app.kubernetes.io/component: 3gpp-ocf
+  ports:
+  - protocol: UDP
+    port: 1813
+    targetPort: radius-acct

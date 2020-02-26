@@ -1,0 +1,57 @@
+### ocs-demo.yaml
+###
+### SigScale OCS one shot demo instance created from empty db dir
+###
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sigscale-ocs
+  labels:
+    app.kubernetes.io/name: ocs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ocs
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ocs
+        app.kubernetes.io/component: 3gpp-ocf
+        app.kubernetes.io/component: rest
+    spec:
+      securityContext:
+        fsGroup: 1000
+      initContainers:
+      - name: ocs-install
+        image: sigscale/ocs
+        command:
+        - sh
+        - bin/initialize
+        stdin: true
+        tty: true
+        volumeMounts:
+        - mountPath: /home/otp/db
+          name: db
+      containers:
+      - name: ocs
+        image: sigscale/ocs
+        ports:
+        - name: diameter
+          protocol: TCP
+          containerPort: 3868
+        - name: radius
+          protocol: UDP
+          containerPort: 1812
+        - name: radius-acct
+          protocol: UDP
+          containerPort: 1813
+        - name: http
+          protocol: TCP
+          containerPort: 8080
+        volumeMounts:
+        - mountPath: /home/otp/db
+          name: db
+      volumes:
+      - name: db
+        emptyDir: {}

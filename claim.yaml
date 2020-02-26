@@ -1,0 +1,14 @@
+### claim.yaml
+###
+### Requests a persistent volume
+###
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ocs-data
+spec:
+  resources:
+    requests:
+      storage: 20Gi
+  accessModes:
+  - ReadWriteOnce
