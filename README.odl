@@ -1,3 +1,5 @@
+# TM Forum Open Digital Lab (ODL)
+
 ## Install CLI
 curl -sL http://ibm.biz/idt-installer | bash
 
@@ -22,17 +24,11 @@ ibmcloud ks clusters
 ### Information about Cluster
 kubectl cluster-info
 
-## Get detailed description of Deployment
-$ kubectl describe deployment ocs
-
-
 ## Create and initialize OCS Deployment
 $ kubectl apply -f ocs-demo.yaml
 
 ## Get list of Deployments
-$ kubectl get deployments
-NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ocs       1         1         1            1           31m
+kubectl get deployments
 
 ## Get list of PersistentVolumes, Claims
 kubectl get pv
