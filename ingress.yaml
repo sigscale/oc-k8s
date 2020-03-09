@@ -3,15 +3,11 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
-  tls:
-   - hosts:
-     - bos-catalyst-cluster.us-south.containers.appdomain.cloud
-     secretName: bos-catalyst-cluster
   rules:
-  - host: bos-catalyst-cluster.us-south.containers.appdomain.cloud
-    http:
+  - http:
       paths:
       - path: /
         backend:
           serviceName: ocs-rest
-          servicePort: 8080
+          servicePort: 80
+

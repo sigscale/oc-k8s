@@ -5,8 +5,9 @@ metadata:
   labels:
     app.kubernetes.io/name: ocs
 spec:
+  type: LoadBalancer
   selector:
-    app.kubernetes.io/component: 3gpp-ocf
+    app.kubernetes.io/component: rest
   ports:
   - protocol: TCP
     port: 80
