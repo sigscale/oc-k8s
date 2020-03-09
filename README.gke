@@ -28,3 +28,15 @@ Name:                   sigscale-ocs
 Namespace:              default
 ...
 
+## Add DIAMETER Ro Service
+$ kubectl apply -f diameter-ro.yaml
+service/diameter-ro created
+
+## Add RADIUS Accounting Service
+$ kubectl apply -f radius-acct.yaml
+service/diameter-ro created
+
+## Add RADIUS Authorization Service
+$ kubectl apply -f radius-auth.yaml
+service/radius-acct created
+

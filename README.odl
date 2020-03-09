@@ -25,10 +25,15 @@ ibmcloud ks clusters
 kubectl cluster-info
 
 ## Create and initialize OCS Deployment
-$ kubectl apply -f ocs-demo.yaml
+kubectl apply -f ocs-demo.yaml
 
 ## Get list of Deployments
 kubectl get deployments
+
+## Add Services
+kubectl apply -f diameter-ro.yaml
+kubectl apply -f radius-acct.yaml
+kubectl apply -f radius-auth.yaml
 
 ## Get list of PersistentVolumes, Claims
 kubectl get pv
