@@ -34,6 +34,7 @@ kubectl get deployments
 kubectl apply -f diameter-ro.yaml
 kubectl apply -f radius-acct.yaml
 kubectl apply -f radius-auth.yaml
+kubectl apply -f ocs-rest.yaml
 
 ## Get list of PersistentVolumes, Claims
 kubectl get pv

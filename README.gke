@@ -40,3 +40,7 @@ service/diameter-ro created
 $ kubectl apply -f radius-auth.yaml
 service/radius-acct created
 
+## Add REST Service
+$ kubectl apply -f ocs-rest.yaml
+service/radius-acct created
+
