@@ -25,17 +25,18 @@ spec:
       initContainers:
       - name: ocs-install
         image: sigscale/ocs
-        command:
-        - sh
-        - bin/initialize
         stdin: true
         tty: true
+        command:
+        - bin/initialize
         volumeMounts:
         - mountPath: /home/otp/db
           name: db
       containers:
       - name: ocs
         image: sigscale/ocs
+        stdin: true
+        tty: true
         ports:
         - name: diameter
           protocol: TCP
