@@ -1,12 +1,15 @@
 # Google Kubernetes Engine (GKE)
 
+## Create a k8s cluster
+$ gcloud container clusters create cluster-1
+	--machine-type g1-small \
+	--disk-size 10 \
+	--num-nodes 1
+
 ## List the k8s clusters available on GKE
 $ gcloud container clusters list
-
-## Create a k8s cluster
-$ gcloud container clusters create cluster-1 --num-nodes=1
-NAME       LOCATION      MASTER_VERSION  MASTER_IP        MACHINE_TYPE   NODE_VERSION    NUM_NODES  STATUS
-cluster-1  asia-east1-b  1.14.10-gke.17  130.211.245.229  n1-standard-1  1.14.10-gke.17  1          RUNNING
+NAME       LOCATION      MASTER_VERSION  MASTER_IP       MACHINE_TYPE  NODE_VERSION    NUM_NODES  STATUS
+cluster-1  asia-east1-b  1.20.8-gke.900  35.194.241.248  g1-small      1.20.8-gke.900  1          RUNNING
 
 ## Get authentication credentials and configure kubectl to use the cluster
 $ gcloud container clusters get-credentials cluster-1
