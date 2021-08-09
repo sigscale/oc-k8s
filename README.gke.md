@@ -23,13 +23,13 @@
 ## Get list of Deployments
 	$ kubectl get deployments
 	NAME           READY   UP-TO-DATE   AVAILABLE   AGE
-	sigscale-ocs   1/1     1            1           5m34s
+	sigscale-ocs   1/1     1            1           12s
 
-## Describe the deployment
-	$ kubectl describe deployment sigscale-ocs
-	Name:                   sigscale-ocs
-	Namespace:              default
-	...
+## Get list of Pods
+	$ kubectl get pods
+	NAME                            READY   STATUS    RESTARTS   AGE
+	sigscale-ocs-5559f96986-vwt8p   1/1     Running   0          24s
+
 
 ## Add DIAMETER Ro Service
 	$ kubectl apply -f diameter-ro.yaml
