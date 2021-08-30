@@ -1,0 +1,8 @@
+### Erlang/OTP Distribution Secrets
+apiVersion: v1
+kind: Secret
+metadata:
+  name: otp-dist
+type: Opaque
+data:
+  ERLANG_COOKIE: SllGWFJZQkhPV0lNWVlLQUlITkI=
