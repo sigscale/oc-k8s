@@ -1,3 +1,5 @@
+## SigScale OCS RADIUS Accounting Service
+##
 kind: Service
 apiVersion: v1
 metadata:
@@ -9,5 +11,6 @@ spec:
     app.kubernetes.io/component: 3gpp-ocf
   ports:
   - protocol: UDP
+    appProtocol: radius
     port: 1813
     targetPort: radius-acct
