@@ -1,0 +1,12 @@
+##
+## Erlang/OTP Cluster Headless Service
+##
+apiVersion: v1
+kind: Service
+metadata:
+  name: otp
+spec:
+  selector:
+    app: ocs
+  type: ClusterIP
+  clusterIP: None
