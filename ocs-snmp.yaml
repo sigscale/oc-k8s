@@ -1,0 +1,16 @@
+## SigScale OCS SNMP Service
+##
+kind: Service
+apiVersion: v1
+metadata:
+  name: ocs-snmp
+  labels:
+    app.kubernetes.io/name: ocs
+spec:
+  selector:
+    app.kubernetes.io/component: snmp
+  ports:
+  - protocol: UDP
+    appProtocol: snmp
+    port: 4161
+    targetPort: snmp

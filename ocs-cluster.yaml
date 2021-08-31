@@ -97,6 +97,9 @@ spec:
         - name: rest
           protocol: TCP
           containerPort: 8080
+        - name: snmp
+          protocol: UDP
+          containerPort: 4161
         volumeMounts:
         - name: ocs-data
           mountPath: /home/otp/db
