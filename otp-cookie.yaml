@@ -1,6 +1,6 @@
 ### Erlang/OTP Distribution Secrets
-apiVersion: v1
 kind: Secret
+apiVersion: v1
 metadata:
   name: otp-dist
 type: Opaque

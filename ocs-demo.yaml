@@ -2,8 +2,8 @@
 ###
 ### SigScale OCS one shot demo instance created from empty db dir
 ###
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: sigscale-ocs
   labels:

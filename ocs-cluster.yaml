@@ -1,7 +1,7 @@
 ## SigScale OCS Cluster StatefulSet
 ##
-apiVersion: apps/v1
 kind: StatefulSet
+apiVersion: apps/v1
 metadata:
   name: ocs
 spec:

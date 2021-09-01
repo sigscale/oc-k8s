@@ -1,8 +1,8 @@
 ##
 ## Erlang/OTP Cluster Headless Service
 ##
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: otp
 spec:
