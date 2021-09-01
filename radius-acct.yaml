@@ -11,6 +11,6 @@ spec:
     app.kubernetes.io/component: 3gpp-ocf
   ports:
   - protocol: UDP
-    appProtocol: radius
+    appProtocol: radius-acct
     port: 1813
     targetPort: radius-acct
