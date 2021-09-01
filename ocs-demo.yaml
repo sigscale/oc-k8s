@@ -18,7 +18,7 @@ spec:
       labels:
         app.kubernetes.io/name: ocs
         app.kubernetes.io/component: 3gpp-ocf
-        app.kubernetes.io/component: rest
+        app.kubernetes.io/component: oam
     spec:
       securityContext:
         fsGroup: 1000
