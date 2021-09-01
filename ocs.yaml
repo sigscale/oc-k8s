@@ -8,16 +8,16 @@ kind: Deployment
 metadata:
   name: ocs
   labels:
-    run: ocs
+    app.kubernetes.io/name: ocs
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: ocs
+      app.kubernetes.io/name: ocs
   template:
     metadata:
       labels:
-        run: ocs
+        app.kubernetes.io/name
     spec:
       initContainers:
       - name: ocs-chown

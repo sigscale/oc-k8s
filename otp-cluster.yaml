@@ -7,6 +7,6 @@ metadata:
   name: otp
 spec:
   selector:
-    app: ocs
+    app.kubernetes.io/name: ocs
   type: ClusterIP
   clusterIP: None

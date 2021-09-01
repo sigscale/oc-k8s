@@ -9,6 +9,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/component: rest
+  type: LoadBalancer
   ports:
   - protocol: TCP
     appProtocol: http
