@@ -11,6 +11,6 @@
 	Fetching cluster endpoint and auth data.
 	kubeconfig entry generated for cluster-1.
 
-## Delete teh GKE Cluster
+## Delete the GKE Cluster
 	$ gcloud container clusters delete cluster-1
 
