@@ -1,0 +1,12 @@
+##
+## Erlang/OTP Cluster Headless Service
+##
+kind: Service
+apiVersion: v1
+metadata:
+  name: otp
+spec:
+  selector:
+    app.kubernetes.io/name: ocs
+  type: ClusterIP
+  clusterIP: None

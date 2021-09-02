@@ -3,21 +3,21 @@
 ### Claim a persistent disk, change owner to otp,
 ### initialize db, run ocs as deployment..
 ###
-apiVersion: v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: ocs
   labels:
-    run: ocs
+    app.kubernetes.io/name: ocs
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: ocs
+      app.kubernetes.io/name: ocs
   template:
     metadata:
       labels:
-        run: ocs
+        app.kubernetes.io/name
     spec:
       initContainers:
       - name: ocs-chown

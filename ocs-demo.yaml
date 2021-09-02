@@ -2,8 +2,8 @@
 ###
 ### SigScale OCS one shot demo instance created from empty db dir
 ###
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: sigscale-ocs
   labels:
@@ -18,7 +18,7 @@ spec:
       labels:
         app.kubernetes.io/name: ocs
         app.kubernetes.io/component: 3gpp-ocf
-        app.kubernetes.io/component: rest
+        app.kubernetes.io/component: oam
     spec:
       securityContext:
         fsGroup: 1000

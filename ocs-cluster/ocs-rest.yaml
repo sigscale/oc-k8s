@@ -1,3 +1,5 @@
+## SigScale OCS REST Service
+##
 kind: Service
 apiVersion: v1
 metadata:
@@ -5,10 +7,11 @@ metadata:
   labels:
     app.kubernetes.io/name: ocs
 spec:
-  type: LoadBalancer
   selector:
-    app.kubernetes.io/component: rest
+    app.kubernetes.io/component: oam
+  type: LoadBalancer
   ports:
   - protocol: TCP
+    appProtocol: http
     port: 80
-    targetPort: 8080
+    targetPort: rest
