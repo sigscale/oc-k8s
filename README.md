@@ -41,7 +41,7 @@
 	If you don't see a command prompt, try pressing enter.
 	
 	(ocs@ocs-1.otp.default.svc.cluster.local)1>
-To disconnect type <CTRL-P><CTRL-Q>
+To disconnect type ctrl-P ctrl-Q
 
 ## Scale up the OCS Cluster
 	$ kubectl scale --replicas=5 statefulset ocs
