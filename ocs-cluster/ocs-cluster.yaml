@@ -105,6 +105,19 @@ spec:
         volumeMounts:
         - name: ocs-data
           mountPath: /home/otp/db
+        readinessProbe:
+          httpGet:
+            httpHeaders:
+              - name: Accept
+                value: application/health+json
+              - name: Authorization
+                value: Basic YWRtaW46YWRtaW4=
+            path: /health
+            port: rest
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          periodSeconds: 10
+          failureThreshold: 6
   volumeClaimTemplates:
   - metadata:
       name: ocs-data
