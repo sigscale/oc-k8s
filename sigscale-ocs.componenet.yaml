@@ -15,7 +15,7 @@ spec:
     - group: apps
       kind: Deployment  
   version: "1.0.0"
-  description: "SigScale Online Charging System (OCS)" 
+  description: "SigScale Online Charging System (OCS)"
   maintainers:
     - name: SigScale
       email: support@sigscale.com
@@ -24,6 +24,11 @@ spec:
       email:  support@sigscale.com 
   coreFunction:
     exposedAPIs: 
+    - name: partyRole
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF669_PartyRole/master/TMF669-PartyRole-v4.0.0.swagger.json
+      implementation: sigscale-ocs-service
+      path: /partyRoleManagement/v4
+      port: 8080
     - name: party
       specification: https://github.com/tmforum/TMFAPISWAGGER/blob/develop/partyManagement/v2/swagger2.json
       implementation: sigscale-ocs-service
