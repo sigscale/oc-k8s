@@ -18,20 +18,9 @@ spec:
         app.kubernetes.io/component: oam
     spec:
       terminationGracePeriodSeconds: 30
+      securityContext:
+         fsGroup: 1000
       initContainers:
-      - name: ocs-chown
-        image: sigscale/ocs
-        stdin: true
-        tty: true
-        securityContext:
-          runAsUser: 0
-        command:
-        - chown
-        - otp:otp
-        - db
-        volumeMounts:
-        - name: ocs-data
-          mountPath: /home/otp/db
       - name: ocs-init
         image: sigscale/ocs
         env:
