@@ -19,7 +19,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 30
       securityContext:
-         fsGroup: 1000
+        fsGroup: 1000
       initContainers:
       - name: ocs-init
         image: sigscale/ocs
