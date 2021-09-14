@@ -1,0 +1,17 @@
+## SigScale OCS DIAMETER Authentication Service
+##
+kind: Service
+apiVersion: v1
+metadata:
+  name: diameter-auth
+  labels:
+    app.kubernetes.io/name: ocs
+    oda.tmforum.org/componentName: sigscale-ocs
+spec:
+  selector:
+    app.kubernetes.io/component: 3gpp-ocf
+  ports:
+  - protocol: TCP
+    appProtocol: diameter
+    port: 3869
+    targetPort: diameter-auth

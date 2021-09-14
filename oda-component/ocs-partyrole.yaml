@@ -1,0 +1,18 @@
+## SigScale OCS REST Service for Security
+##
+kind: Service
+apiVersion: v1
+metadata:
+  name: sigscale-partyrole
+  labels:
+    app.kubernetes.io/name: ocs
+    oda.tmforum.org/componentName: sigscale-ocs
+spec:
+  selector:
+    app.kubernetes.io/component: oam
+  type: NodePort
+  ports:
+  - protocol: TCP
+    appProtocol: http
+    port: 8090
+    targetPort: rest

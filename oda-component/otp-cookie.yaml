@@ -1,0 +1,10 @@
+### Erlang/OTP Distribution Secrets
+kind: Secret
+apiVersion: v1
+metadata:
+  name: otp-dist
+  labels:
+    oda.tmforum.org/componentName: sigscale-ocs
+type: Opaque
+data:
+  ERLANG_COOKIE: SllGWFJZQkhPV0lNWVlLQUlITkI=

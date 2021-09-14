@@ -1,0 +1,17 @@
+## SigScale OCS DIAMETER Accounting Service
+##
+kind: Service
+apiVersion: v1
+metadata:
+  name: diameter-acct
+  labels:
+    app.kubernetes.io/name: ocs
+    oda.tmforum.org/componentName: sigscale-ocs
+spec:
+  selector:
+    app.kubernetes.io/component: 3gpp-ocf
+  ports:
+  - protocol: TCP
+    appProtocol: diameter
+    port: 3868
+    targetPort: diameter-acct

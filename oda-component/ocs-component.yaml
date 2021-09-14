@@ -1,0 +1,80 @@
+apiVersion: oda.tmforum.org/v1alpha3
+kind: component
+metadata:
+  name: sigscale-ocs
+  labels:
+    oda.tmforum.org/componentName: sigscale-ocs
+spec:
+  type: ocs
+  selector:
+    matchLabels:
+     oda.tmforum.org/componentName: sigscale-ocs
+  componentKinds:
+    - group: core
+      kind: Service
+    - group: apps
+      kind: StatefulSet
+    - group: core
+      kind: Secret
+  version: "1.0.0"
+  description: "SigScale Online Charging System (OCS)"
+  maintainers:
+    - name: SigScale
+      email: support@sigscale.com
+  owners:
+    - name: SigScale
+      email:  support@sigscale.com 
+  coreFunction:
+    exposedAPIs: 
+    - name: party
+      implementation: sigscale-ocs-service
+      path: /partyManagement/v1/
+      port: 8080
+    - name: productCatalog
+      implementation: sigscale-ocs-service
+      path: /productCatalogManagement/v2/
+      port: 8080
+    - name: serviceCatalog
+      implementation: sigscale-ocs-service
+      path: /serviceCatalogManagement/v2/
+      port: 8080
+    - name: resourceCatalog
+      implementation: sigscale-ocs-service
+      path: /resourceCatalogManagement/v2/
+      port: 8080
+    - name: productInventory
+      implementation: sigscale-ocs-service
+      path: /productInventoryManagement/v2/
+      port: 8080
+    - name: serviceInventory
+      implementation: sigscale-ocs-service
+      path: /serviceInventoryManagement/v2/
+      port: 8080
+    - name: resourceInventory
+      implementation: sigscale-ocs-service
+      path: /resourceInventoryManagement/v1/
+      port: 8080
+    - name: balance
+      implementation: sigscale-ocs-service
+      path: /balanceManagement/v1/
+      port: 8080
+    - name: usage
+      implementation: sigscale-ocs-service
+      path: /usageManagement/v1/
+      port: 8080
+    dependentAPIs: []
+  eventNotification:
+    publishedEvents: []
+    subscribedEvents: []
+  management: []
+  security:
+    controllerRole: admin
+    securitySchemes:
+      bearerAuth:
+        type: http
+        scheme: bearer
+        bearerFormat: JWT    
+    partyrole:
+      implementation: sigscale-partyrole
+      path: /partyRoleManagement/v4/
+      port: 8090
