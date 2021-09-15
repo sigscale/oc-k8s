@@ -4,6 +4,8 @@ kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: ocs
+  labels:
+    app.kubernetes.io/name: ocs
 spec:
   selector:
     matchLabels:
@@ -14,8 +16,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: ocs
-        app.kubernetes.io/component: 3gpp-ocf
-        app.kubernetes.io/component: oam
+        app.kubernetes.io/component: ocs-node
     spec:
       terminationGracePeriodSeconds: 30
       securityContext:

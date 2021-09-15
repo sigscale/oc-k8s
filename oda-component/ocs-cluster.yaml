@@ -5,6 +5,7 @@ apiVersion: apps/v1
 metadata:
   name: ocs
   labels:
+    app.kubernetes.io/name: ocs
     oda.tmforum.org/componentName: sigscale-ocs
 spec:
   selector:
@@ -16,9 +17,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: ocs
-        app.kubernetes.io/component: 3gpp-ocf
-        app.kubernetes.io/component: oam
-        oda.tmforum.org/componentName: sigscale-ocs
+        app.kubernetes.io/component: ocs-node
     spec:
       terminationGracePeriodSeconds: 30
       securityContext:

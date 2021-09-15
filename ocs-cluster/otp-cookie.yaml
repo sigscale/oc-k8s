@@ -3,6 +3,8 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: otp-dist
+  labels:
+    app.kubernetes.io/name: ocs
 type: Opaque
 data:
   ERLANG_COOKIE: SllGWFJZQkhPV0lNWVlLQUlITkI=

@@ -3,6 +3,7 @@ kind: component
 metadata:
   name: sigscale-ocs
   labels:
+    app.kubernetes.io/name: ocs
     oda.tmforum.org/componentName: sigscale-ocs
 spec:
   type: ocs

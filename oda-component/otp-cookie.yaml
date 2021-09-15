@@ -4,6 +4,7 @@ apiVersion: v1
 metadata:
   name: otp-dist
   labels:
+    app.kubernetes.io/name: ocs
     oda.tmforum.org/componentName: sigscale-ocs
 type: Opaque
 data:

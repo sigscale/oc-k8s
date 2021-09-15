@@ -5,8 +5,10 @@ kind: Service
 apiVersion: v1
 metadata:
   name: otp
+  labels:
+    app.kubernetes.io/name: ocs
 spec:
   selector:
-    app.kubernetes.io/name: ocs
+    app.kubernetes.io/component: ocs-node
   type: ClusterIP
   clusterIP: None
