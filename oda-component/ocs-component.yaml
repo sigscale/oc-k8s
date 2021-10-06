@@ -78,4 +78,4 @@ spec:
     partyrole:
       implementation: sigscale-partyrole
       path: /partyRoleManagement/v4/
-      port: 8090
+      port: 8080
