@@ -23,7 +23,7 @@ spec:
         fsGroup: 1000
       initContainers:
       - name: ocs-init
-        image: sigscale/ocs
+        image: asia.gcr.io/sigscale-ocs/ocs
         env:
         - name: ERLANG_COOKIE
           valueFrom:
@@ -58,8 +58,10 @@ spec:
           mountPath: /home/otp/db
       containers:
       - name: ocs
-        image: sigscale/ocs
+        image: asia.gcr.io/sigscale-ocs/ocs
         env:
+        - name: ERLARGS
+          value: ""
         - name: ERLANG_COOKIE
           valueFrom:
             secretKeyRef:
@@ -95,6 +97,9 @@ spec:
         volumeMounts:
         - name: ocs-data
           mountPath: /home/otp/db
+        volumeMounts:
+        - name: ocs-log
+          mountPath: /home/otp/logs
         readinessProbe:
           httpGet:
             httpHeaders:
@@ -111,6 +116,13 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: ocs-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi
+  - metadata:
+      name: ocs-log
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
