@@ -2,7 +2,7 @@
 
 ## Create a (tiny) GKE Cluster
 	$ gcloud container clusters create cluster-1
-			--machine-type g1-small \
+			--machine-type e2-small \
 			--disk-size 10 \
 			--num-nodes 1
 
