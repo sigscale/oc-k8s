@@ -25,6 +25,8 @@ spec:
       - name: ocs-init
         image: asia.gcr.io/sigscale-ocs/ocs
         env:
+        - name: ERLARGS
+          value: ""
         - name: ERLANG_COOKIE
           valueFrom:
             secretKeyRef:
@@ -97,7 +99,6 @@ spec:
         volumeMounts:
         - name: ocs-data
           mountPath: /home/otp/db
-        volumeMounts:
         - name: ocs-log
           mountPath: /home/otp/logs
         readinessProbe:

@@ -66,5 +66,5 @@ To disconnect type ctrl-P ctrl-Q
 	secret "otp-dist" deleted
 	service "radius-acct" deleted
 	service "radius-auth" deleted
-	$ kubectl delete pvc ocs-data-ocs-{0,1,2}
+	$ kubectl delete pvc ocs-data-ocs-{0,1,2} ocs-log-ocs-{0,1,2}
 
