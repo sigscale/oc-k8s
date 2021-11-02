@@ -4,7 +4,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: otp
+  name: otp-ocs
   labels:
     app.kubernetes.io/name: ocs
     oda.tmforum.org/componentName: sigscale-ocs

@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: ocs
-  serviceName: otp
+  serviceName: otp-ocs
   replicas: 3
   template:
     metadata:
