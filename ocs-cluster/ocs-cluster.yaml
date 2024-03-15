@@ -23,7 +23,7 @@ spec:
         fsGroup: 1000
       initContainers:
       - name: ocs-init
-        image: asia.gcr.io/sigscale-ocs/ocs
+        image: sigscale/ocs
         env:
         - name: ERLARGS
           value: ""
@@ -60,7 +60,7 @@ spec:
           mountPath: /home/otp/db
       containers:
       - name: ocs
-        image: asia.gcr.io/sigscale-ocs/ocs
+        image: sigscale/ocs
         env:
         - name: ERLARGS
           value: ""
