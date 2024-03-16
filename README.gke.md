@@ -6,7 +6,7 @@
 			--disk-size 10 \
 			--num-nodes 3
 
-## Configure `kubectl` to use the GHE Cluster
+## Configure `kubectl` to use the GKE Cluster
 	$ gcloud container clusters get-credentials cluster-1
 	Fetching cluster endpoint and auth data.
 	kubeconfig entry generated for cluster-1.
